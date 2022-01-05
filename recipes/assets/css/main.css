@@ -1,0 +1,17 @@
+/* basics */
+html {
+    padding-left : 10%;
+	box-sizing: border-box;
+    font-size: 16pt;
+}
+body  {
+    background-image: url("paper.gif");
+    background-color: #FEFAE0;
+}
+#header {
+    display: inline;
+    padding: 1% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
