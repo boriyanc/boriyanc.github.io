@@ -94,18 +94,35 @@
 					<h2>Get In Touch</h2>
 					<p><strong>Mr Lance</strong> began teaching in 1995.  His favourite teaching subject is this one, English.  
 						In his personal time,  Mr Lance trains in Aikido and plays Chess.</p><div class="row">
-						<div class="col-8 col-12-small">
-							<form method="post" action="https://script.google.com/a/macros/invictus.edu.kh/s/AKfycbzIcEgpok6lqizvLuN1oHWjItF-VzjltKOMFSs7vR9-Hl0Hba87o036GxFqQHfPOQi0/exec">
+						<!--<div class="col-8 col-12-small">
+							<form name="contact-form" method="post" action="https://script.google.com/a/macros/invictus.edu.kh/s/AKfycbzIcEgpok6lqizvLuN1oHWjItF-VzjltKOMFSs7vR9-Hl0Hba87o036GxFqQHfPOQi0/exec">
 								<div class="row gtr-uniform gtr-50">
-									<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-									<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
+									<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" value=""/></div>
+									<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" value=""/></div>
 									<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
 								</div>
 							</form>
-							<ul class="actions">
-								<li><input type="submit" value="Send Message" /></li>
 							
+							<ul class="actions">
+								<li><input type="submit" value="Send Message" onclick="submitForm()"/></li>
 							</ul>
+						</div>-->
+						<div id="col-8 col-12-small">
+							<form name="contact-form" method="post" action="https://script.google.com/macros/s/AKfycbwpUKObudGVM32SJDK4i9zKwwrxU5Y5StKJXZ_X06cG43ah9s955elsBdJDsDNTaPIC/exec" target="ninja-frame">
+								<div class="row gtr-uniform gtr-50">
+									<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" class="user-input" value="" required></div>
+									<div class="col-6 col-12-xsmall"><input name="email" id="email" type="text" placeholder="Email" class="user-input" value="" required></div>
+									<div class="col-12"><textarea name="message" id="message" placeholder="Message" class="user-input" rows="4" required></textarea></div>
+									<p>*Please fill out every field</p>
+								</div>
+									<input type="submit" value="Submit" id="submit" onclick="submitForm()">
+								<script>
+									function submitForm() {
+									document.contact-form.submit();
+									document.contact-form.reset();
+									}
+								</script>
+							</form>
 						</div>
 						<div class="col-4 col-12-small">
 							<ul class="labeled-icons">
