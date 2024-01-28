@@ -16,7 +16,7 @@ yesBtn.addEventListener("click", () => {
 
         // renaming buttons
         yesBtn.innerHTML = "me too!";
-        noBtn.innerHTML = "tit's not that deep...";
+        noBtn.innerHTML = "tit's not dat deep";
     
         // gets the noBtn back to its original position (attempted)
         noBtn.style.left = originalPosition.left + 'px';
@@ -25,12 +25,12 @@ yesBtn.addEventListener("click", () => {
         question.innerHTML = "iloveyoutoo babyyyy";
         gif.src = "hug-love.gif";
 
-        yesBtn.innerHTML = "continue onn";
+        yesBtn.innerHTML = "me too >-<";
         noBtn.innerHTML = "ew go away";
 
         noBtn.style.left = originalPosition.left + 'px';
         noBtn.style.top = originalPosition.top + 'px';
-    } else if (yesBtn.innerHTML === "continue onn") {
+    } else if (yesBtn.innerHTML === "me too >-<") {
         question.innerHTML = "anyway here's a lil smth to show you how much i appreciate you";
         gif.src = "me.gif";
 
