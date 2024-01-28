@@ -13,6 +13,8 @@ yesBtn.addEventListener("click", () => {
     if (yesBtn.innerHTML === "hey *cutely*") {
         question.innerHTML = "erm! i like u";
         gif.src = "baby.gif";
+
+        // renaming buttons
         yesBtn.innerHTML = "me too!";
         noBtn.innerHTML = "tit's not that deep...";
     
@@ -22,30 +24,34 @@ yesBtn.addEventListener("click", () => {
     } else if (yesBtn.innerHTML === "me too!") {
         question.innerHTML = "iloveyoutoo babyyyy";
         gif.src = "hug-love.gif";
+
         yesBtn.innerHTML = "continue onn";
         noBtn.innerHTML = "ew go away";
-    
-        // gets the noBtn back to its original position (attempted)
+
         noBtn.style.left = originalPosition.left + 'px';
         noBtn.style.top = originalPosition.top + 'px';
     } else if (yesBtn.innerHTML === "continue onn") {
         question.innerHTML = "anyway here's a lil smth to show you how much i appreciate you";
         gif.src = "me.gif";
+
         yesBtn.innerHTML = "okay!";
         noBtn.innerHTML = "i dont like u sry";
-    
-        // gets the noBtn back to its original position (attempted)
+
         noBtn.style.left = originalPosition.left + 'px';
         noBtn.style.top = originalPosition.top + 'px';
     } else if (yesBtn.innerHTML === "okay!") {
-        question.innerHTML = "i love you more thanks";
+        question.innerHTML = "(proof i love you more thanks)";
         gif.src = "sunflower.gif";
-        yesBtn.innerHTML = "you made it";
-        noBtn.innerHTML = "(tbd vday)";
+
+        yesBtn.innerHTML = "you made it!";
+        noBtn.innerHTML = "(updated on vday)";
     
-        // gets the noBtn back to its original position (attempted)
         noBtn.style.left = originalPosition.left + 'px';
         noBtn.style.top = originalPosition.top + 'px';
+
+        // linking the yes Btn
+    } else if (yesBtn.innerHTML === "you made it!") {
+        window.location.href = "baby.html";
     }
 });
 

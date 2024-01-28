@@ -14,9 +14,15 @@ body {
     background: whitesmoke;
 }
 
+p {
+    padding-left: 2%; 
+    padding-right: 2%;
+    color: 
+}
+
 h2 {
     font-size: 3em;
-    color: #e94d58;
+    color: #001B2E;
     margin: 15px 0;
 }
 
@@ -58,22 +64,23 @@ button {
     bottom: 5%;
     width: 150px;
     height: inherit;
-    color: white;
+    color: #FFEFD3;
     font-size: 1.2em;
     border-radius: 30px;
     outline: none;
     cursor: pointer;
-    box-shadow: 0 2px 4px gray;
-    border: 2px solid #e94d58;
+    box-shadow: 0 2px 4px ADB6C4;
+    border: 2px solid #294C60;
     font-size: 1.2em;
 }
 
 button:nth-child(1) {
     margin-left: -200px;
-    background: #e94d58;
+    background: #294C60;
 }
 
 button:nth-child(2) {
     margin-right: -200px;
-    background: #e94d58;
+    background: #294C60;
 }
+
