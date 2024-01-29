@@ -10,13 +10,15 @@
     </head>
     <body>
         <!-- question time! -->
-        <div class="wrapper" id = "hiddenDiv">
+        <div class="wrapper">
             <h2 class="question"> hello, you.</h2>
-            <img class="gif" alt="gif" src="joey.gif">
-            <!-- <p>^^ could b us but you playin too much smh</p> -->
-            <div class="btn-group">
-                <button class="yes-btn">hey *cutely*</button>
-                <button class="no-btn">bro's NOTT joe</button>
+            <div id = "hiddenDiv">
+                <img class="gif" alt="gif" src="joey.gif" >
+                <!-- <p>^^ could b us but you playin too much smh</p> -->
+                <div class="btn-group" >
+                    <button class="yes-btn">hey *cutely*</button>
+                    <button class="no-btn">bro's NOTT joe</button>
+                </div>
             </div>
         </div>
         <script src="script.js"></script>
@@ -148,7 +150,7 @@
                            // window.location.href = 'index.html';
                             n = 5
                             type.innerHTML = "access granted!"
-                            document.getElementById("hiddenDiv").style.display = "block";
+                            document.getElementById("hiddenDiv").style.visibility = "visible";
                             document.getElementById("secretDiv").style.display = "none";
                         } else if (code == "e") {
                             typedNumbers.innerHTML = "__ __ __ __";

@@ -53,6 +53,7 @@ yesBtn.addEventListener("click", () => {
     } else if (yesBtn.innerHTML === "you made it!") {
         document.getElementById("babyDiv").style.display = "block";
         document.getElementById("hiddenDiv").style.display = "none";
+        document.getElementsByClassName("question").style.display = "none";
     }
 });
 
