@@ -10,7 +10,7 @@
     </head>
     <body>
         <!-- question time! -->
-        <div class="wrapper">
+        <div class="wrapper" id = "hiddenDiv">
             <h2 class="question">hello, you.</h2>
             <img class="gif" alt="gif" src="joey.gif">
             <!-- <p>^^ could b us but you playin too much smh</p> -->
@@ -19,7 +19,126 @@
                 <button class="no-btn">bro's NOTT joe</button>
             </div>
         </div>
-
         <script src="script.js"></script>
+        
+        <!-- code pad !! -->
+        <div class="codey" id="secretDiv">
+            <h2 class="statement" id="type"><!--please enter code--><span id="cursor">|</span></h2>
+            <div class = "typed-numbers"> <p id="typedNumbers">__ __ __ __</p> </div>
+            <div class="code-pad">
+                <button class="code-button" onclick="enterCode(1)">1</button>
+                <button class="code-button" onclick="enterCode(2)">2</button>
+                <button class="code-button" onclick="enterCode(3)">3</button>
+                <button class="code-button" onclick="enterCode(4)">4</button>
+                <button class="code-button" onclick="enterCode(5)">5</button>
+                <button class="code-button" onclick="enterCode(6)">6</button>
+                <button class="code-button" onclick="enterCode(7)">7</button>
+                <button class="code-button" onclick="enterCode(8)">8</button>
+                <button class="code-button" onclick="enterCode(9)">9</button>
+                
+                <button class="code-button" onclick='enterCode("b")'> <img class="gif" alt="back" src="back.png"> </button>
+                <button class="code-button" onclick="enterCode(0)">0</button>
+                <button class="code-button" onclick="enterCode('e')"> <img class="gif" alt="back" src="yes.png"> </button>
+            </div>
+        
+            <script>
+                /* type writing effect*/
+                var i = 0;
+                var txt = 'please enter code.'; 
+                var speed = 100;
+    
+                function typeWriter() {
+                    if (i < txt.length) {
+                        document.getElementById("type").innerHTML += txt.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, speed);
+                    }
+                }
+    
+                window.onload = function () {
+                    typeWriter();
+                    // Optional: To toggle cursor visibility using JavaScript
+                    setInterval(function () {
+                        var cursor = document.getElementById('cursor');
+                        cursor.style.visibility = (cursor.style.visibility === 'hidden' ? '' : 'hidden');
+                    }, 500); // Toggle every 500 milliseconds (adjust as needed)
+                };
+                
+                // typed in code 
+                var n = 0;
+    
+                function enterCode(code) {
+                    var typedNumbers = document.getElementById("typedNumbers");
+                    var type = document.getElementById("type");
+                    var currentNumbers = typedNumbers.innerHTML.replace(/ __ /g, " ");
+    
+                    // typing the numbers in 
+                    if (n == 0){
+                        if (code == "b") {
+                            typedNumbers.innerHTML = "__ __ __ __"
+                        } else if (code == "e"){
+                            typedNumbers.innerHTML = "__ __ __ __"
+                            n = 0
+                        } else {
+                            typedNumbers.innerHTML = code + " __ __ __";
+                            n += 1
+                            no1 = code;
+                        }
+                    } else if (n == 1){
+                        if (code == "b") {
+                            n -= 1
+                            typedNumbers.innerHTML = " __ __ __ __";
+                        } else if (code == "e") {
+                            typedNumbers.innerHTML = "__ __ __ __";
+                            n = 0;
+                        } else {
+                            typedNumbers.innerHTML = no1.toString() + " " + code + " __ __";
+                            n += 1;
+                            no2 = code;
+                        }
+                    } else if (n == 2){
+                        if (code == "b") {
+                            n -= 1
+                            typedNumbers.innerHTML = no1.toString() + "__ __ __";
+                        } else if (code == "e") {
+                            typedNumbers.innerHTML = "__ __ __ __";
+                            n = 0;
+                        } else {
+                            typedNumbers.innerHTML = no1.toString() + " " + no2.toString() + " " + code + " __";
+                            n += 1;
+                            no3 = code;
+                        }
+                        
+                    } else if (n == 3){
+                        if (code == "b") {
+                            n -= 1;
+                            typedNumbers.innerHTML = no1.toString() + " " + no2.toString() + " __ __";
+                        } else if (code == "e") {
+                            typedNumbers.innerHTML = "__ __ __ __";
+                            n = 0;
+                        } else {
+                            typedNumbers.innerHTML = no1.toString() + " " + no2.toString() + " " + no3.toString() + " " + code;
+                            n += 1;
+                            no4 = code;
+                        }
+                    } else if (n==4) {
+                        if (code == "b") {
+                            n -= 1
+                            typedNumbers.innerHTML = no1.toString() + " " + no2.toString() + no3.toString() + " __";
+                        } else if (code == "e" && no1 == 1 && no2 == 2 && no3 == 3 && no4 == 4) {
+                           // window.location.href = 'index.html';
+                            n == 5
+                            type.innerHTML = "access granted!"
+                            
+                    document.getElementById("hiddenDiv").style.display = "block";
+                    document.getElementById("secretDiv").style.display = "none";
+                        } else if (code == "e") {
+                            typedNumbers.innerHTML = "__ __ __ __";
+                            n = 0;
+                        }
+                    }
+                }
+            </script>
+        </div>
     </body>
 </html>

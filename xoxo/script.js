@@ -19,8 +19,7 @@ yesBtn.addEventListener("click", () => {
         noBtn.innerHTML = "tit's not dat deep";
     
         // gets the noBtn back to its original position (attempted)
-        noBtn.style.left = originalPosition.left + 'px';
-        noBtn.style.top = originalPosition.top + 'px';
+        resetNoBtnPosition();
     } else if (yesBtn.innerHTML === "me too!") {
         question.innerHTML = "iloveyoutoo babyyyy";
         gif.src = "hug-love.gif";
@@ -51,7 +50,8 @@ yesBtn.addEventListener("click", () => {
 
         // linking the yes Btn
     } else if (yesBtn.innerHTML === "you made it!") {
-        window.location.href = "baby.html";
+        document.getElementById("babyDiv").style.display = "block";
+        document.getElementById("hiddenDiv").style.display = "none";
     }
 });
 
@@ -66,3 +66,8 @@ noBtn.addEventListener("mouseover", () => {
     noBtn.style.left = randomX + 'px';
     noBtn.style.top = randomY + 'px';
 })
+
+function resetNoBtnPosition() {
+    noBtn.style.left = originalPosition.left + 'px';
+    noBtn.style.top = originalPosition.top + 'px';
+}
