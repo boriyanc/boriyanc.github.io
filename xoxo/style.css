@@ -116,8 +116,8 @@ button:hover {
 }
 
 button img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     object-fit: cover;
     object-position: center;
 }
@@ -125,9 +125,18 @@ button img {
 .statement {
     font-family: "Lucida Console", "Courier New", monospace;
     font-size: 3em;
-    margin: 15px 0;
-    /* text-align: center;*/
+    margin: 30px 0 15px;
+    padding-top: 20px;
 }
+
+/* text-align: center;
+.statement {
+    position: inherit;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}*/
+
 
 .code-pad {
     display: grid;
