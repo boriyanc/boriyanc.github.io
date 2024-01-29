@@ -160,3 +160,7 @@ button img {
 #hiddenDiv, #babyDiv {
     display: none;
 }
+
+.hidden {
+    display:none;
+}
