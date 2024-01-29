@@ -25,12 +25,12 @@ yesBtn.addEventListener("click", () => {
         question.innerHTML = "iloveyoutoo babyyyy";
         gif.src = "hug-love.gif";
 
-        yesBtn.innerHTML = "me too >-<";
+        yesBtn.innerHTML = "uwu *submissively";
         noBtn.innerHTML = "ew go away";
 
         noBtn.style.left = originalPosition.left + 'px';
         noBtn.style.top = originalPosition.top + 'px';
-    } else if (yesBtn.innerHTML === "me too >-<") {
+    } else if (yesBtn.innerHTML === "uwu *submissively") {
         question.innerHTML = "anyway here's a lil smth to show you how much i appreciate you";
         gif.src = "me.gif";
 

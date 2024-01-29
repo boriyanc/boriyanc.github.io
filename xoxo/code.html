@@ -17,12 +17,18 @@
 
             body {
                 display: flex;
-                /*margin: 0;
-                padding: 0;*/
                 justify-content: center;
                 align-items: center;
                 min-height: 100vh;
                 background: whitesmoke;
+            }
+            
+            p {
+                font-size: 2em;
+                padding-bottom: 5%;
+            }
+            .wrapper {
+                text-align: center;
             }
 
             h2 {
@@ -41,8 +47,16 @@
                 cursor: pointer;
                 box-shadow: 0 2px 4px #ADB6C4;
                 border: 10px solid #294C60;
-                /*font-size: 1.2em;*/
                 transition-duration: 0.1s;
+                position: relative;
+                overflow: hidden;
+            }
+
+            button img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
             }
 
             button:hover {
@@ -54,13 +68,13 @@
                 font-family: "Lucida Console", "Courier New", monospace;
                 font-size: 3em;
                 margin: 15px 0;
-                text-align: center;
+                /* text-align: center;*/
             }
 
             .code-pad {
                 display: grid;
                 grid-template-columns: repeat(3, 80px);
-                grid-template-rows: repeat(3,80px);
+                grid-template-rows: repeat(4,80px);
                 grid-gap: 10px;
                 justify-content: center;
             }
@@ -75,11 +89,19 @@
                 cursor: pointer;
                 font-family: "Lucida Console", "Courier New", monospace;
             }
+
+            /* .typed-numbers {
+                font-family: "Lucida Console", "Courier New", monospace;
+                font-size: 1.5em;
+                text-align: center;
+                margin-top: 10px;
+            } */
         </style>
     </head>
     <body>
         <div class="wrapper">
             <h2 class="statement" id="type"><!--please enter code--><span id="cursor">|</span></h2>
+            <div class = "typed-numbers"> <p id="typedNumbers">__ __ __ __</p> </div>
             <div class="code-pad">
                 <button class="code-button" onclick="enterCode(1)">1</button>
                 <button class="code-button" onclick="enterCode(2)">2</button>
@@ -90,13 +112,18 @@
                 <button class="code-button" onclick="enterCode(7)">7</button>
                 <button class="code-button" onclick="enterCode(8)">8</button>
                 <button class="code-button" onclick="enterCode(9)">9</button>
+                
+                <button class="code-button" onclick='enterCode("b")'> <img class="gif" alt="back" src="back.png"> </button>
+                <button class="code-button" onclick="enterCode(0)">0</button>
+                <button class="code-button" onclick="enterCode('e')"> <img class="gif" alt="back" src="yes.png"> </button>
             </div>
         </div>
         
         <script>
+            /* type writing effect*/
             var i = 0;
-            var txt = 'please enter code.'; /* The text */
-            var speed = 100; /* The speed/duration of the effect in milliseconds */
+            var txt = 'please enter code.'; 
+            var speed = 100;
 
             function typeWriter() {
                 if (i < txt.length) {
@@ -114,9 +141,74 @@
                     cursor.style.visibility = (cursor.style.visibility === 'hidden' ? '' : 'hidden');
                 }, 500); // Toggle every 500 milliseconds (adjust as needed)
             };
+            
+            // typed in code 
+            var n = 0;
 
             function enterCode(code) {
-                text.innerHTML = "nah"
+                var typedNumbers = document.getElementById("typedNumbers");
+                var currentNumbers = typedNumbers.innerHTML.replace(/ __ /g, " ");
+
+                // typing the numbers in 
+                if (n == 0){
+                    if (code == "b") {
+                        typedNumbers.innerHTML = "__ __ __ __"
+                    } else if (code == "e"){
+                        typedNumbers.innerHTML = "__ __ __ __"
+                        n = 0
+                    } else {
+                        typedNumbers.innerHTML = code + " __ __ __";
+                        n += 1
+                        no1 = code;
+                    }
+                } else if (n == 1){
+                    if (code == "b") {
+                        n -= 1
+                        typedNumbers.innerHTML = " __ __ __ __";
+                    } else if (code == "e") {
+                        typedNumbers.innerHTML = "__ __ __ __";
+                        n = 0;
+                    } else {
+                        typedNumbers.innerHTML = no1.toString() + " " + code + " __ __";
+                        n += 1;
+                        no2 = code;
+                    }
+                } else if (n == 2){
+                    if (code == "b") {
+                        n -= 1
+                        typedNumbers.innerHTML = no1.toString() + "__ __ __";
+                    } else if (code == "e") {
+                        typedNumbers.innerHTML = "__ __ __ __";
+                        n = 0;
+                    } else {
+                        typedNumbers.innerHTML = no1.toString() + " " + no2.toString() + " " + code + " __";
+                        n += 1;
+                        no3 = code;
+                    }
+                    
+                } else if (n == 3){
+                    if (code == "b") {
+                        n -= 1;
+                        typedNumbers.innerHTML = no1.toString() + " " + no2.toString() + " __ __";
+                    } else if (code == "e") {
+                        typedNumbers.innerHTML = "__ __ __ __";
+                        n = 0;
+                    } else {
+                        typedNumbers.innerHTML = no1.toString() + " " + no2.toString() + " " + no3.toString() + " " + code;
+                        n += 1;
+                        no4 = code;
+                    }
+                } else if (n==4) {
+                    if (code == "b") {
+                        n -= 1
+                        typedNumbers.innerHTML = no1.toString() + " " + no2.toString() + no3.toString() + " __";
+                    } else if (code == "e" && no1 == 1 && no2 == 2 && no3 == 3 && no4 == 4) {
+                        // window.location.href = 'index.html';
+                    } else if (code == "e") {
+                        typedNumbers.innerHTML = "__ __ __ __";
+                        n = 0;
+                    }
+                }
             }
         </script>
     </body>
